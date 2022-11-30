@@ -14,12 +14,12 @@ class BankTest extends TestCase
     public function test_create_bank()
     {
 
-        $user = User::factory()->create(['role_id'=> 1]);
+        $user = User::factory()->make(['role_id'=> 1]);
 
         $bank = Bank::factory()->make();
 
         $response = $this->actingAs($user)
-            ->post(route('admin.bank.store',['name' => 'سامان']
+            ->post(route('admin.bank.store',['name' => $bank->name]
         ));
 
         $response->assertRedirect('/');

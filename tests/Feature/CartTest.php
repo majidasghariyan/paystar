@@ -15,9 +15,9 @@ class CartTest extends TestCase
     public function test_create_cart()
     {
 
-        $user = User::factory()->create(['role_id'=> 1]);
+        $user = User::factory()->make(['role_id'=> 1]);
 
-        $bank = Bank::factory()->create();
+        $bank = Bank::factory()->make();
 
 
         $response = $this->actingAs($user)
@@ -35,11 +35,11 @@ class CartTest extends TestCase
 
     public function test_update_cart()
     {
-        $user = User::factory()->create(['role_id'=> 1]);
+        $user = User::factory()->make(['role_id'=> 1]);
 
         $cart = Cart::factory()->create();
 
-        $bank = Bank::factory()->create();
+        $bank = Bank::factory()->make();
 
         $data = [
             'user_id' => $user->id,
@@ -59,7 +59,7 @@ class CartTest extends TestCase
     public function test_delete_cart()
     {
 
-        $user = User::factory()->create(['role_id'=> 1]);
+        $user = User::factory()->make(['role_id'=> 1]);
 
         $cart = Cart::factory()->create();
 
