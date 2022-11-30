@@ -23,12 +23,15 @@ class BankTest extends TestCase
         ));
 
         $response->assertRedirect('/');
+
+        // $response->assertStatus(200);
+        // we are use back() in controller this is why we get failed 302
     }
 
     public function test_update_bank()
     {
 
-        $user = User::factory()->create(['role_id'=> 1]);
+        $user = User::factory()->make(['role_id'=> 1]);
 
         $bank = Bank::factory()->create();
 
@@ -47,7 +50,7 @@ class BankTest extends TestCase
     public function test_delete_bank()
     {
 
-        $user = User::factory()->create(['role_id'=> 1]);
+        $user = User::factory()->make(['role_id'=> 1]);
 
         $bank = Bank::factory()->create();
 
